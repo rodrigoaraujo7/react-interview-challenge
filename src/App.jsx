@@ -13,8 +13,8 @@ export const App = () => {
     const element = document.createElement('span'); 
     element.classList.add('circle')
 
-    element.style.left = (newElementPosition.clientX - 17) + 'px';
-    element.style.top = (newElementPosition.clientY - 82) + 'px';
+    element.style.left = (newElementPosition.clientX - 180) + 'px';
+    element.style.top = (newElementPosition.clientY - 155) + 'px';
 
     document.getElementById('content').appendChild(element)
   }
@@ -28,10 +28,12 @@ export const App = () => {
   }
 
   return (
-    <div>
-      <h1>ReactJS Interview Challenge</h1>
-      <button onClick={undo}>undo</button>
-      <button onClick={redo}>redo</button>
+    <div className='container'>
+      <center>
+        <h1>ReactJS Interview Challenge</h1>
+        <button onClick={undo}>undo</button>
+        <button onClick={redo}>redo</button>
+      </center>
 
       <div id="content" onClick={handleClick}>
 
