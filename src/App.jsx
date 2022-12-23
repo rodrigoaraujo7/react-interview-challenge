@@ -17,7 +17,7 @@ export const App = () => {
     element.style.left = newElementPosition.clientX + 'px';
     element.style.top = newElementPosition.clientY + 'px';
 
-    element.style.padding = '15px';
+    element.style.padding = '35px';
     element.style.borderRadius = '80px';
     element.style.backgroundColor = '#DA0037';
 
@@ -27,10 +27,20 @@ export const App = () => {
     document.getElementById('content').appendChild(element)
   }
 
+  const undo = () => {
+    document.getElementById('content').lastElementChild.remove()
+  }
+
   return (
-    <div id='content' onClick={handleClick}>
+    <div>
       <h1>ReactJS Interview Challenge</h1>
+      <button onClick={undo}>undo</button>
+      <button>redo</button>
       {x && y ? (<h1>{`x: ${x}; y: ${y};`}</h1>) : null}
+
+      <div id="content" onClick={handleClick}>
+
+      </div>
     </div>
   )
 }
