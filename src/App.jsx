@@ -1,28 +1,20 @@
-import { useEffect, useState } from 'react'
 import './App.css'
 
 export const App = () => {
-  const [x, setX] = useState([]);
-  const [y, setY] = useState([]);
-
   const handleClick = (event) => {
     const newElementPosition = {
       clientX: event.clientX,
       clientY: event.clientY
     }
 
+    console.log(newElementPosition.clientX);
+    console.log(newElementPosition.clientY);
+
     const element = document.createElement('span'); 
+    element.classList.add('circle')
 
-    element.style.position = "absolute";
-    element.style.left = newElementPosition.clientX + 'px';
-    element.style.top = newElementPosition.clientY + 'px';
-
-    element.style.padding = '35px';
-    element.style.borderRadius = '80px';
-    element.style.backgroundColor = '#DA0037';
-
-    console.log(newElementPosition.clientX)
-    console.log(newElementPosition.clientY)
+    element.style.left = (newElementPosition.clientX - 17) + 'px';
+    element.style.top = (newElementPosition.clientY - 82) + 'px';
 
     document.getElementById('content').appendChild(element)
   }
@@ -40,7 +32,6 @@ export const App = () => {
       <h1>ReactJS Interview Challenge</h1>
       <button onClick={undo}>undo</button>
       <button onClick={redo}>redo</button>
-      {x && y ? (<h1>{`x: ${x}; y: ${y};`}</h1>) : null}
 
       <div id="content" onClick={handleClick}>
 

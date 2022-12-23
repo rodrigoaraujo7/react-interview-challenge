@@ -23,9 +23,12 @@ body {
   border-radius: 10px;
 }
 
-span .circle {
-  height: 100px;
-  width: 100px;
+.circle {
   background-color: #DA0037;
+
+  height: 75px;
+  width: 75px;
+  
   border-radius: 80px;
+  position: absolute;
 }
