@@ -31,11 +31,15 @@ export const App = () => {
     document.getElementById('content').lastElementChild.remove()
   }
 
+  const redo = () => {
+    document.getElementById('content').textContent = ''
+  }
+
   return (
     <div>
       <h1>ReactJS Interview Challenge</h1>
       <button onClick={undo}>undo</button>
-      <button>redo</button>
+      <button onClick={redo}>redo</button>
       {x && y ? (<h1>{`x: ${x}; y: ${y};`}</h1>) : null}
 
       <div id="content" onClick={handleClick}>
