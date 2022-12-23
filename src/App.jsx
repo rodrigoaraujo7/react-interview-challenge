@@ -13,14 +13,21 @@ export const App = () => {
     }
 
     window.addEventListener('mousemove', update);
-    window.addEventListener('touchmove', update);
+    window.addEventListener('click', () => {
+      const element = document.createElement('span'); 
+
+      element.style.padding = '15px';
+      element.style.borderRadius = '80px';
+      element.style.backgroundColor = '#DA0037';
+
+      document.getElementById('content').appendChild(element)
+    });
   }, [setX, setY])
 
   return (
-    <div>
+    <div id='content'>
       <h1>ReactJS Interview Challenge</h1>
       <h1>{`x: ${x}; y: ${y};`}</h1>
-      <Circle></Circle>
     </div>
   )
 }
